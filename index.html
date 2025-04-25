@@ -1,244 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Steffen &amp; Kristina's Wedding</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steffen &amp; Kristina's Wedding</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html {
-      font-size: 18px;
-    }
+        html {
+            font-size: 18px;
+        }
 
-    html, body {
-      height: 100%;
-    }
+        html,
+        body {
+            height: 100%;
+        }
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: #fefefe;
-      text-align: center;
-      background: url('https://asgsr.org/wp-content/uploads/2020/01/iStock-697020460-scaled.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #fefefe;
+            text-align: center;
+            background: url('https://asgsr.org/wp-content/uploads/2020/01/iStock-697020460-scaled.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .site-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: white;
-      padding: 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+        .site-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+            padding: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
 
-    .menu-toggle {
-      display: none;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      z-index: 1001;
-    }
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
-    .menu-toggle span {
-      background: gold;
-      height: 3px;
-      width: 100%;
-      margin: 4px 0;
-      border-radius: 2px;
-      transition: 0.4s;
-    }
+        .menu-toggle span {
+            background: gold;
+            height: 3px;
+            width: 100%;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.4s;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 0.5rem;
-      transition: max-height 0.3s ease-out;
-      border-radius: 0;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem;
+            transition: max-height 0.3s ease-out;
+            border-radius: 0;
+        }
 
-    nav a {
-      color: gold;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 0.5rem 1rem;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
+        a {
+            color: gold;
+        }
 
-    nav a:hover {
-      border-color: gold;
-      border-radius: 5px;
-    }
+        a:visited {
+            color: pink;
+        }
 
-    header {
-      padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.5);
-    }
+        nav a {
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+        nav a:hover {
+            border-color: gold;
+            border-radius: 5px;
+        }
 
-    p.date {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    }
+        nav a:visited {
+            color: gold;
+        }
 
-    .address {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    }
+        header {
+            padding: 2rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+        }
 
-    .address a {
-      color: gold;
-      text-decoration: none;
-      border-bottom: 1px dashed gold;
-    }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
 
-    .address a:hover {
-      text-decoration: underline;
-    }
+        p.date {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
 
-    #countdown {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 1.2rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      border-radius: 8px;
-    }
+        .address {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
 
-    #countdown div {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1rem;
-      border-radius: 8px;
-      min-width: 70px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    }
+        .address a {
+            color: gold;
+            text-decoration: none;
+            border-bottom: 1px dashed gold;
+        }
 
-    @media (max-width: 600px) {
-      .menu-toggle {
-        display: flex;
-      }
+        .address a:hover {
+            text-decoration: underline;
+        }
 
-      nav {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-        background: rgba(0, 0, 0, 0.95);
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-        width: calc(100% - 20px);
-        max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        backdrop-filter: blur(6px);
-      }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+        }
 
-      nav.show {
-        max-height: 500px;
-        padding: 1rem;
-      }
+        #countdown div {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 70px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
 
-      nav a {
-        padding: 0.75rem 1rem;
-        width: 100%;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-      }
+        .rsvp-cta {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 70px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            width: auto;
+            align-self: center;
+            margin-bottom: 36px;
+            font-size: xx-large;
+        }
 
-      h1 {
-        font-size: 2rem;
-      }
+        @media (max-width: 600px) {
+            .menu-toggle {
+                display: flex;
+            }
 
-      #countdown {
-        font-size: 1rem;
-      }
-    }
-  </style>
+            nav {
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+                background: rgba(0, 0, 0, 0.95);
+                border-radius: 12px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+                width: calc(100% - 20px);
+                max-height: 0;
+                overflow: hidden;
+                padding: 0;
+                backdrop-filter: blur(6px);
+            }
+
+            nav.show {
+                max-height: 500px;
+                padding: 1rem;
+            }
+
+            nav a {
+                padding: 0.75rem 1rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            #countdown {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="site-title">It's About Damn Time!</div>
+    <div class="site-title">It's About Damn Time!</div>
 
-  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="/itinerary.html">Itinerary</a>
-    <a href="/faq.html">FAQ</a>
-    <a href="/directions.html">Directions &amp; Contact</a>
-    <a href="/rsvp.html">RSVP</a>
-  </nav>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/itinerary.html">Itinerary</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/directions.html">Directions &amp; Contact</a>
+        <a href="https://forms.gle/yyXUz44DZ7s4CWsm8" target="_blank">RSVP</a>
+    </nav>
 
-  <header>
-    <h1>Steffen &amp; Kristina's Wedding</h1>
-    <p class="date">August 15, 2025 at 10:15 AM</p>
-    <p class="address">
-      <a href="https://www.google.com/maps/search/?api=1&query=15+Grand+Meadow+Cres,+Edmonton,+AB+T6L+1A3" target="_blank">
-        Mill Woods United Church<br>
-        15 Grand Meadow Cres, Edmonton, AB T6L 1A3
-      </a>
-    </p>
-  </header>
+    <a class="rsvp-cta" href="https://forms.gle/yyXUz44DZ7s4CWsm8" target="_blank">Click here to RSVP now! ⚠️</a>
 
-  <section id="countdown">
-    <div id="days">--</div>
-    <div id="hours">--</div>
-    <div id="minutes">--</div>
-    <div id="seconds">--</div>
-  </section>
+    <header>
+        <h1>Steffen &amp; Kristina's Wedding</h1>
+        <p class="date">August 15, 2025 at 10:15 AM</p>
+        <p class="address">
+            <a href="https://www.google.com/maps/search/?api=1&query=15+Grand+Meadow+Cres,+Edmonton,+AB+T6L+1A3"
+                target="_blank">
+                Mill Woods United Church<br>
+                15 Grand Meadow Cres, Edmonton, AB T6L 1A3
+            </a>
+        </p>
+    </header>
 
-  <script>
-    const weddingDate = new Date("August 15, 2025 10:15:00").getTime();
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("days").innerText = days + "d";
-      document.getElementById("hours").innerText = hours + "h";
-      document.getElementById("minutes").innerText = minutes + "m";
-      document.getElementById("seconds").innerText = seconds + "s";
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "The wedding has begun!";
-      }
-    }, 1000);
-  </script>
+    <section id="countdown">
+        <div id="days">--</div>
+        <div id="hours">--</div>
+        <div id="minutes">--</div>
+        <div id="seconds">--</div>
+    </section>
+
+    <script>
+        const weddingDate = new Date("August 15, 2025 10:15:00").getTime();
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("days").innerText = days + "d";
+            document.getElementById("hours").innerText = hours + "h";
+            document.getElementById("minutes").innerText = minutes + "m";
+            document.getElementById("seconds").innerText = seconds + "s";
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "The wedding has begun!";
+            }
+        }, 1000);
+    </script>
 </body>
+
 </html>

@@ -11,7 +11,6 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -35,15 +34,7 @@
         }
 
         p {
-            font-size: 5vmin;
-        }
-
-        .site-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: white;
-            padding: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 3vmin;
         }
 
         .menu-toggle {
@@ -91,7 +82,6 @@
         }
 
         nav a {
-            color: gold;
             text-decoration: none;
             font-weight: 700;
             padding: 0.5rem 1rem;
@@ -120,32 +110,9 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        p.date {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-        }
-
-        .address {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-        }
-
-        .address a {
-            color: gold;
-            text-decoration: none;
-            border-bottom: 1px dashed gold;
-        }
-
-        .address a:hover {
-            text-decoration: underline;
-        }
-
         section {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: column;
             gap: 1rem;
             font-size: 1.2rem;
             flex-wrap: wrap;
@@ -156,32 +123,37 @@
             min-width: 100%;
         }
 
-
         section>div {
             flex-grow: 1;
         }
 
-        iframe {
-            width: 95%;
-            height: 50vh;
+        .itinerary {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 0.5em 1em;
+            margin-top: 1em;
+            margin-left: 25vw;
+            margin-right: 25vw;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1rem;
+        .time {
+            text-align: right;
+            font-weight: bold;
+            white-space: nowrap;
         }
 
-        @media (max-width: 999px) {
-            section>div {
-                width: 99vw;
-            }
+        .event {
+            text-align: left;
         }
 
         @media (max-width: 600px) {
             .menu-toggle {
                 display: flex;
+            }
+
+            .itinerary {
+                margin-left: 2vw;
+                margin-right: 2vw;
             }
 
             nav {
@@ -235,52 +207,33 @@
     </nav>
 
     <section>
-        <div>
-            <h1>Location</h1>
-            <p class="address">
-                <a href="https://www.google.com/maps/search/?api=1&query=15+Grand+Meadow+Cres,+Edmonton,+AB+T6L+1A3"
-                    target="_blank">
-                    Mill Woods United Church<br>
-                    15 Grand Meadow Cres, Edmonton, AB T6L 1A3
-                </a>
-            </p>
-
-            <div class="map-container">
-                <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-113.43597292900087%2C53.472894653763575%2C-113.42775464057924%2C53.47636840608642&amp;layer=mapnik&amp;marker=53.474398,-113.430512"
-                    style="border: 1px solid black">
-                </iframe>
-                <br />
-                <small>
-                    <a target="_blank" href="https://www.openstreetmap.org/?#map=17/53.474632/-113.431864">
-                        View Larger Map
-                    </a>
-                </small>
-            </div>
-        </div>
-        <div class="contact-info">
-            <h1>Contact</h1>
-            <p>
-                <a href="tel:+17809063370">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="#FFFFFF"
-                        xmlns="http://www.w3.org/2000/svg" color="#FFFFFF">
-                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
-                            d="M4.06343 1.25L7.81435 1.25C8.12672 1.25 8.40638 1.44361 8.51634 1.73599L9.97178 5.60588C10.02 5.73398 10.0322 5.87281 10.0071 6.00735L9.2778 9.91931C10.1742 12.0273 11.6548 13.4439 14.1104 14.7146L17.9754 13.9657C18.1126 13.9391 18.2545 13.9514 18.3851 14.0012L22.2669 15.4804C22.5577 15.5912 22.7498 15.87 22.7498 16.1812L22.7498 19.7655C22.7498 21.391 21.3176 22.7101 19.6424 22.3456C16.5888 21.6811 10.9315 19.9923 6.9695 16.0303C3.17436 12.2352 1.90282 6.99252 1.47478 4.15869C1.23055 2.54172 2.52735 1.25 4.06343 1.25Z"
-                            fill="#000000"></path>
-                    </svg>
-                    780-906-3370
-                </a>
-            </p>
-            <p>
-                <a href="mailto:steffen@technically.fun">
-                        <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000" stroke-width="1.5"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 4.25C2.48122 4.25 1.25 5.48122 1.25 7V17C1.25 18.5188 2.48122 19.75 4 19.75H20C21.5188 19.75 22.75 18.5188 22.75 17V7C22.75 5.48122 21.5188 4.25 20 4.25H4ZM7.4301 8.38558C7.09076 8.14804 6.62311 8.23057 6.38558 8.5699C6.14804 8.90924 6.23057 9.37689 6.5699 9.61442L11.5699 13.1144C11.8281 13.2952 12.1719 13.2952 12.4301 13.1144L17.4301 9.61442C17.7694 9.37689 17.852 8.90924 17.6144 8.5699C17.3769 8.23057 16.9092 8.14804 16.5699 8.38558L12 11.5845L7.4301 8.38558Z" fill="#FFFFFF"></path></svg>
-                    steffen@technically.fun
-                </a>
-            </p>
-            <p>On-site parking available at the venue.</p>
+        <h1>Itinerary</h1>
+        <p>For more information on many of the items below, see the <a href="/faq.html">FAQ for more details!</a>
+        <div class="itinerary">
+            <div class="time">09:15 AM</div>
+            <div class="event">Doors Open, Light snacks and coffee available</div>
+            <div class="time">10:15 AM</div>
+            <div class="event">Ceremony begins</div>
+            <div class="time">11:00 AM</div>
+            <div class="event">Assembly Photo (Everyone)</div>
+            <div class="time">11:15 PM</div>
+            <div class="event">Paper Airplane Contest</div>
+            <div class="time">11:30 AM</div>
+            <div class="event">Catered Lunch + Speeches</div>
+            <div class="time">12:30 PM</div>
+            <div class="event">Games / Challenges</div>
+            <div class="time">01:45 PM</div>
+            <div class="event">Hand Unfasting Ceremony</div>
+            <div class="time">02:00 PM</div>
+            <div class="event">Food Bank Delivery</div>
+            <div class="time">03:00 PM</div>
+            <div class="event">Board Games / Reception</div>
+            <div class="time">05:00 PM</div>
+            <div class="event">Pizza Time!</div>
+            <div class="time">06:30 PM</div>
+            <div class="event">Cleanup</div>
         </div>
     </section>
-
 </body>
 
 </html>
